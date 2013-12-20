@@ -14,7 +14,10 @@ class Git(VcsBase):
             uri=repository_uri, path=destination))
         with path(destination):
             cmd = "git clone {uri}".format(uri=repository_uri)
-            subprocess.check_call(shlex.split(cmd))
+            try:
+                res = subprocess.check_call(shlex.split(cmd))
+            except subprocess.CalledProcessError as e:
+                print(e)
 
     def update(self, repository):
         logging.info("Updating repository {path}".format(path=repository))
