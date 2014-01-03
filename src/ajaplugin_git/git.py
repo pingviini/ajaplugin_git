@@ -7,7 +7,7 @@ from aja.vcs.base import VcsBase
 
 
 class Git(VcsBase):
-    """Aja git support."""
+    """Aja Git support."""
 
     def pull(self, repository_uri, destination, **kwargs):
         logging.info("Cloning repository {uri} to {path}".format(
