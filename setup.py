@@ -26,6 +26,7 @@ setup(name='ajaplugin_git',
           'aja',
           'path.py',
       ],
+      test_suite='ajaplugin_git.tests',
       entry_points={
           'aja.plugins.vcs': 'git = ajaplugin_git.git:Git',
       },
